@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wehelps.co.in/sitemap.xml
