@@ -4,24 +4,12 @@
     <loc>https://wehelps.co.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://wehelphrconsulting.com/index-en.html" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://wehelphrconsulting.com/index-hi.html" />
-    <xhtml:link rel="alternate" hreflang="ml" href="https://wehelphrconsulting.com/index-ml.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://wehelphrconsulting.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://wehelps.co.in/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wehelps.co.in/" />
   </url>
   <url>
-    <loc>https://wehelps.co.in/index-en.html</loc>
+    <loc>https://wehelps.co.in/portfolio/hr-portfolio.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://wehelps.co.in/index-hi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wehelps.co.in/index-ml.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

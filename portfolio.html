@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Help HR Consulting | HR & Placement Consultancy in Kerala</title>
+  <meta
+    name="description"
+    content="We Help HR Consulting is a trusted placement consultancy in Pattambi, Kerala, helping qualified candidates find the right opportunities and supporting employers with reliable hiring solutions."
+  >
+  <link rel="icon" type="image/png" href="assets/images/logo/headerbg.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --surface: #fffdf8;
+      --surface-strong: #ffffff;
+      --surface-muted: #efe7d8;
+      --text: #14261e;
+      --muted: #516157;
+      --accent: #0d6b53;
+      --accent-dark: #0a4f3d;
+      --accent-soft: #d8eee7;
+      --border: rgba(20, 38, 30, 0.1);
+      --shadow: 0 18px 60px rgba(27, 46, 38, 0.08);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --container: min(1120px, calc(100% - 2rem));
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(216, 238, 231, 0.8), transparent 34%),
+        linear-gradient(180deg, #f8f5ee 0%, #f4f1ea 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(248, 245, 238, 0.86);
+      border-bottom: 1px solid rgba(20, 38, 30, 0.06);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 120px;
+      height: 72px;
+      display: block;
+      border-radius: 0;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 0.1rem;
+    }
+
+    .brand-text strong {
+      font-size: 0.98rem;
+    }
+
+    .brand-text span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .footer-meta a:hover,
+    .footer-meta a:focus-visible,
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: var(--accent);
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
+    }
+
+    .nav-cta {
+      padding: 0.8rem 1.1rem;
+      background: var(--text);
+      color: #fff;
+    }
+
+    .btn {
+      padding: 0.95rem 1.45rem;
+    }
+
+    .nav-cta:hover,
+    .btn:hover,
+    .nav-cta:focus-visible,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(13, 107, 83, 0.22);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(20, 38, 30, 0.16);
+    }
+
+    .hero-section {
+      padding: 5.5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .contact-card,
+    .service-card,
+    .industry-card,
+    .trust-card,
+    .testimonial-card,
+    .stat-card {
+      background: rgba(255, 253, 248, 0.92);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.9rem;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    h1,
+    h2 {
+      font-family: "Newsreader", serif;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      max-width: 12ch;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      max-width: 16ch;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-text,
+    .section-copy p,
+    .section-heading p,
+    .stats-copy p,
+    .contact-copy p,
+    .hero-card p,
+    .service-card p,
+    .industry-card p,
+    .trust-card p,
+    .contact-note,
+    .site-footer p {
+      color: var(--muted);
+    }
+
+    .hero-text {
+      font-size: 1.08rem;
+      max-width: 58ch;
+      margin: 1.4rem 0 0;
+    }
+
+    .hero-actions,
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+
+    .hero-points div {
+      padding-top: 1rem;
+      border-top: 1px solid rgba(20, 38, 30, 0.1);
+    }
+
+    .hero-points strong,
+    .stat-card strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-points span,
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .hero-card {
+      padding: 2.2rem;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(240, 248, 244, 0.95)),
+        var(--surface);
+    }
+
+    .card-label {
+      margin: 0 0 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .feature-list {
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background: rgba(255, 253, 248, 0.48);
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+    }
+
+    .section-heading {
+      margin-bottom: 2rem;
+    }
+
+    .section-heading.centered {
+      text-align: center;
+      display: grid;
+      place-items: center;
+    }
+
+    .section-heading.centered h2,
+    .section-heading.centered p {
+      max-width: 22ch;
+    }
+
+    .section-heading.centered p:last-child {
+      max-width: 68ch;
+    }
+
+    .card-grid,
+    .industry-grid,
+    .trust-grid,
+    .testimonial-grid {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .card-grid,
+    .industry-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .trust-grid,
+    .testimonial-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .industry-card,
+    .trust-card,
+    .testimonial-card {
+      padding: 1.8rem;
+      border-radius: var(--radius-md);
+    }
+
+    .trust-section {
+      background:
+        linear-gradient(180deg, rgba(216, 238, 231, 0.34), rgba(248, 245, 238, 0));
+    }
+
+    .stats-section {
+      padding: 1rem 0 5rem;
+    }
+
+    .stats-shell {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #113a2f, #185843);
+      color: #f7fbf9;
+      box-shadow: var(--shadow);
+    }
+
+    .stats-shell .eyebrow,
+    .stats-shell .stats-copy p,
+    .stats-shell .stat-card span {
+      color: rgba(247, 251, 249, 0.78);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-card {
+      padding: 1.6rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+
+    .testimonial-card {
+      margin: 0;
+    }
+
+    .testimonial-card p {
+      margin: 0 0 1.2rem;
+      font-size: 1.03rem;
+    }
+
+    .testimonial-card footer {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .contact-section {
+      padding-bottom: 6rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .contact-list {
+      margin: 1.5rem 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-list div {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(20, 38, 30, 0.08);
+    }
+
+    .contact-list dt {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-list dd {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .site-footer {
+      padding: 1.5rem 0 2.5rem;
+      border-top: 1px solid rgba(20, 38, 30, 0.08);
+    }
+
+    .footer-shell {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 980px) {
+      .nav-shell,
+      .footer-shell,
+      .split-section,
+      .hero-grid,
+      .stats-shell,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .card-grid,
+      .industry-grid,
+      .trust-grid,
+      .testimonial-grid,
+      .hero-points,
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site-header {
+        position: static;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-section {
+        padding-top: 2.5rem;
+      }
+
+      .brand-mark {
+        width: 96px;
+        height: 60px;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .contact-card,
+      .service-card,
+      .industry-card,
+      .trust-card,
+      .testimonial-card {
+        padding: 1.5rem;
+      }
+
+      .section,
+      .contact-section {
+        padding: 4rem 0;
+      }
+
+      .card-grid,
+      .industry-grid,
+      .trust-grid,
+      .testimonial-grid,
+      .hero-points,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 11vw, 3.5rem);
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="We Help HR Consulting home">
+        <img class="brand-mark" src="assets/images/logo/headerbg.png" alt="We Help HR Consulting logo">
+        <span class="brand-text">
+          <strong>We Help HR Consulting</strong>
+          <span>Trusted HR & Placement Consultancy</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Talk to Us</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Based in Pattambi, Kerala</p>
+          <h1>Connecting qualified talent with the right employers, with clarity and confidence.</h1>
+          <p class="hero-text">
+            We Help HR Consulting supports educationally qualified job seekers in finding suitable opportunities
+            and helps businesses hire dependable talent through a professional, responsive placement process.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">For Candidates</a>
+            <a class="btn btn-secondary" href="#contact">For Employers</a>
+          </div>
+          <div class="hero-points" aria-label="Highlights">
+            <div>
+              <strong>550+</strong>
+              <span>successful placements completed</span>
+            </div>
+            <div>
+              <strong>Verified</strong>
+              <span>employer connections and hiring support</span>
+            </div>
+            <div>
+              <strong>Trusted</strong>
+              <span>by companies across multiple hiring needs</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <p class="card-label">Why businesses and candidates choose us</p>
+          <h2>A dependable bridge between talent and opportunity.</h2>
+          <p>
+            From the first inquiry to final placement, we focus on responsive communication, role-fit matching,
+            and practical support that makes hiring and job searching more efficient.
+          </p>
+          <ul class="feature-list">
+            <li>Professional support for candidates seeking the right career move</li>
+            <li>Reliable hiring assistance for companies looking to build strong teams</li>
+            <li>Industry-aligned recruitment across business-critical functions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split-section">
+        <div class="section-heading">
+          <p class="eyebrow">About Us</p>
+          <h2>Professional placement support rooted in trust, responsiveness, and real outcomes.</h2>
+        </div>
+        <div class="section-copy">
+          <p>
+            We Help HR Consulting is a trusted HR and placement consultancy serving candidates and employers
+            from Mele Pattambi, Pattambi, Kerala. We are committed to helping educationally qualified
+            individuals identify suitable job opportunities while supporting companies with the employees
+            they need to grow with confidence.
+          </p>
+          <p>
+            Our approach is simple and professional: understand the requirement, connect the right people,
+            and stay involved throughout the process. That focus has helped us complete 550+ successful placements
+            while building credibility with both job seekers and hiring teams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">Services</p>
+          <h2>Hiring and placement solutions designed for long-term fit.</h2>
+          <p>
+            We offer focused recruitment support that helps candidates move forward and helps employers hire with confidence.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="service-card">
+            <h3>Permanent Hiring</h3>
+            <p>
+              We connect companies with qualified professionals for full-time roles, with attention to skill match,
+              business needs, and long-term retention.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Contract Staffing</h3>
+            <p>
+              We support flexible workforce needs by helping employers identify capable professionals for contract-based
+              assignments and time-sensitive hiring demands.
+            </p>
+          </article>
+          <article class="service-card">
+            <h3>Leadership Search</h3>
+            <p>
+              We assist in sourcing experienced leadership talent for high-responsibility positions where judgment,
+              credibility, and strategic fit matter most.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="industries">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">Industries Served</p>
+          <h2>Industry-focused hiring support across essential business functions.</h2>
+          <p>
+            Our placements span roles that help organizations operate efficiently and help qualified candidates find relevant opportunities.
+          </p>
+        </div>
+        <div class="industry-grid">
+          <article class="industry-card">
+            <h3>Technology and Products</h3>
+            <p>Supporting hiring for teams that build, manage, and deliver modern products and technical solutions.</p>
+          </article>
+          <article class="industry-card">
+            <h3>Sales and Operations</h3>
+            <p>Helping businesses strengthen daily performance with capable professionals across customer-facing and operational roles.</p>
+          </article>
+          <article class="industry-card">
+            <h3>Finance and Corporate</h3>
+            <p>Connecting employers with dependable talent for finance, administration, coordination, and corporate support functions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust-section">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>A trustworthy hiring partner for companies and a supportive guide for job seekers.</h2>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-card">
+            <h3>Verified employer connections</h3>
+            <p>We work to connect candidates with genuine opportunities and help employers access relevant, qualified talent.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Clear and responsive communication</h3>
+            <p>Quick responses and proactive follow-up help reduce confusion and keep both sides informed throughout the process.</p>
+          </article>
+          <article class="trust-card">
+            <h3>People-first professional support</h3>
+            <p>We understand that every role and every candidate matters, so we approach each requirement with care and attention.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Proven placement results</h3>
+            <p>With 550+ successful placements completed, our work reflects consistency, reliability, and outcome-focused service.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Trusted by companies</h3>
+            <p>Nest Matrimony - 21 staffs provided, Bright Yamaha - 12 staffs provided, Alshahma Eye Hospital - 3 staffs provided, and more.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container stats-shell">
+        <div class="stats-copy">
+          <p class="eyebrow">Our Impact</p>
+          <h2>More than placements. Meaningful hiring progress for both sides.</h2>
+          <p>
+            Whether you are looking for your next professional opportunity or the right employee to strengthen your team,
+            our process is built to create quality matches and smoother outcomes.
+          </p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>550+</strong>
+            <span>successful placements</span>
+          </div>
+          <div class="stat-card">
+            <strong>2</strong>
+            <span>audiences served: candidates and employers</span>
+          </div>
+          <div class="stat-card">
+            <strong>3</strong>
+            <span>core hiring services offered</span>
+          </div>
+          <div class="stat-card">
+            <strong>100%</strong>
+            <span>focus on professional, responsive support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="testimonials">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow">Testimonials</p>
+          <h2>What clients and professionals say about working with us.</h2>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial-card">
+            <p>"Quick responses and personalized guidance made my job search seamless from start to finish."</p>
+            <footer>Rifa Fathima, HR Manager, Alshahma Eye Hospital</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"They connected me with ideal opportunities and ensured smooth onboarding support."</p>
+            <footer>Sruthi MC, Accountant, Ashriya Builders</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"Reliable talent sourcing with excellent communication throughout the hiring process."</p>
+            <footer>Navami Menon, Coordinator, Diya Group</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"Efficient placements and proactive follow-ups helped us build a strong team fast."</p>
+            <footer>Vineeth P, Manager, Musamiha Group</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact Us</p>
+          <h2>Ready to hire or looking for your next opportunity?</h2>
+          <p>
+            Speak with We Help HR Consulting for reliable hiring support, candidate guidance, and professional assistance
+            tailored to your requirement. We welcome inquiries from both employers and job seekers.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="tel:8078409730">Call Now</a>
+            <a class="btn btn-secondary" href="mailto:Wehelpjobsptb@gmail.com">Email Us</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <dl class="contact-list">
+            <div>
+              <dt>Contact Person</dt>
+              <dd>Safida Najeeb</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd><a href="tel:8078409730">8078409730</a></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:Wehelpjobsptb@gmail.com">Wehelpjobsptb@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Address</dt>
+              <dd>Mele Pattambi, Pattambi, Kerala, India - 679303</dd>
+            </div>
+          </dl>
+          <p class="contact-note">
+            For employers: share your hiring needs and role requirements.
+            For candidates: reach out for suitable job opportunities and placement support.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div>
+        <strong>We Help HR Consulting</strong>
+        <p>Trusted HR and placement consultancy serving candidates and employers in Kerala.</p>
+      </div>
+      <div class="footer-meta">
+        <span>Safida Najeeb</span>
+        <a href="tel:8078409730">8078409730</a>
+        <a href="mailto:Wehelpjobsptb@gmail.com">Wehelpjobsptb@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
