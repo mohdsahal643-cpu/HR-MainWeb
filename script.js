@@ -2,6 +2,7 @@
 const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwxKfp66aECXQ0AYP0E5q67_2H2JJycf_MtMm_dE1d4X9q1JffVDaXKmI4dh8Gu4tJ6wg/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.documentElement.classList.add("js");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const menuToggle = document.querySelector(".menu-toggle");
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTop = document.querySelector(".back-to-top");
   const sectionLinks = document.querySelectorAll('.site-nav a[href^="#"]');
   const trackedSections = document.querySelectorAll("main section[id]");
+  const statCards = Array.from(document.querySelectorAll(".stat"));
   const inquiryForm = document.querySelector(".inquiry-form");
   const formStatus = document.querySelector(".form-status");
   if (formStatus && formStatus.parentElement !== document.body) {
@@ -110,6 +112,73 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
     });
+  }
+
+  const parseStatText = (text) => {
+    const match = text.trim().match(/^([\d.]+)(.*)$/);
+    if (!match) {
+      return null;
+    }
+    return {
+      value: Number(match[1]),
+      suffix: match[2] || ""
+    };
+  };
+
+  const animateStatNumber = (heading, value, suffix) => {
+    if (prefersReducedMotion || !Number.isFinite(value)) {
+      heading.textContent = `${value}${suffix}`;
+      return;
+    }
+
+    const duration = 900;
+    const startTime = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      heading.textContent = `${Math.round(value * eased)}${suffix}`;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const revealStatCard = (card) => {
+    if (card.dataset.animated === "true") {
+      return;
+    }
+    card.dataset.animated = "true";
+    card.classList.add("is-visible");
+
+    const heading = card.querySelector("h2");
+    const parsed = heading ? parseStatText(heading.textContent) : null;
+    if (heading && parsed) {
+      animateStatNumber(heading, parsed.value, parsed.suffix);
+    }
+  };
+
+  if (statCards.length) {
+    statCards.forEach((card, index) => {
+      card.style.setProperty("--stat-delay", `${index * 100}ms`);
+    });
+
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      statCards.forEach(revealStatCard);
+    } else {
+      const statObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          revealStatCard(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.35 });
+
+      statCards.forEach((card) => statObserver.observe(card));
+    }
   }
 
   if (inquiryForm) {
